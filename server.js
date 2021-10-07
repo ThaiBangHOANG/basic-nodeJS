@@ -7,5 +7,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`First Programm on Node JS at http://localhost: ${port}`);
+  console.log(`First Programm of Node JS at url: http://localhost:${port}`);
 });
