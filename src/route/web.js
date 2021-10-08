@@ -10,7 +10,7 @@ const initWebRoute = (app) => {
     res.send(`I'm Thai Bang`);
   });
 
-  return app.use("/api/v1/", router);
+  return app.use("/", router);
 };
 
 export default initWebRoute;
