@@ -1,13 +1,3 @@
-// import mysql from "mysql2/promise";
-
-// const connection = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   database: "nodejsbasic",
-// });
-
-// export default connection;
-
 import mysql from "mysql2/promise";
 
 const pool = mysql.createPool({
@@ -17,3 +7,13 @@ const pool = mysql.createPool({
 });
 
 export default pool;
+
+// import mysql from "mysql2/promise";
+
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   database: "nodejsbasic",
+// });
+
+// export default connection;
