@@ -1,3 +1,32 @@
+import pool from "../configs/connectDB";
+
+let getHompage = async (req, res) => {
+  const [rows, fields] = await pool.execute("SELECT * from users");
+  return res.render("index.ejs", { dataUser: rows });
+};
+
+let getDetailPage = async (req, res) => {
+  let userId = req.params.id;
+  let [user] = await pool.execute(`select * from users where id = ?`, [userId]);
+  return res.send(JSON.stringify(user));
+};
+
+let getNewUser = async (req, res) => {
+  let { firstName, lastName, email, address } = req.body;
+  await pool.execute(
+    "insert into users(firstName, lastName, email, address) values (?, ?, ?, ?)",
+    [firstName, lastName, email, address]
+  );
+
+  return res.redirect("/");
+};
+
+module.exports = {
+  getHompage,
+  getDetailPage,
+  getNewUser,
+};
+
 // import connection from "../configs/connectDB";
 
 // let getHompage = (req, res) => {
@@ -21,21 +50,3 @@
 // };
 
 // use async/await ::::::::::::::::: use creation Pool
-
-import pool from "../configs/connectDB";
-
-let getHompage = async (req, res) => {
-  const [rows, fields] = await pool.execute("SELECT * from users");
-  return res.render("index.ejs", { dataUser: rows });
-};
-
-let getDetailPage = async (req, res) => {
-  let userId = req.params.id;
-  let [user] = await pool.execute("select * from users");
-  return res.send(JSON.stringify(user));
-};
-
-module.exports = {
-  getHompage,
-  getDetailPage,
-};
