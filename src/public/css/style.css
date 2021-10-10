@@ -56,6 +56,15 @@ body {
     cursor    : pointer;
 }
 
+.btn-edit {
+    margin-top: 15px;
+    cursor    : pointer;
+}
+.btn-delete {
+    margin-top: 15px;
+    cursor    : pointer;
+}
+
 .upload-file-container {
     padding: 15px;
 }

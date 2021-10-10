@@ -30,7 +30,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     <% for(let i=0; i < dataUser.length; i++) { %>
                         <tr>
                             <td>
@@ -48,11 +47,11 @@
                                         target="_blank">Detail</a></button>
                                 </form>
                                 <form action="/edit-user/<%= dataUser[i].id %>" method="GET">
-                                    <button type="submit">Edit</button>
+                                    <button type="submit"><a class="btn-edit">Edit</a></button>
                                 </form>
                                 <form action="/delete-user" method="POST">
                                     <input type="text" hidden value="<%= dataUser[i].id %>" name="userId" />
-                                    <button type="submit">Delete</button>
+                                    <button type="submit"><a class="btn-delete" >Delete</a></button>
                                 </form>
                             </td>
                         </tr>
